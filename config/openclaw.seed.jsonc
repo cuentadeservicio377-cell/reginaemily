@@ -1,0 +1,44 @@
+{
+  "runtimeConfig": {
+    "gateway": {
+      "mode": "local"
+    },
+    "agents": {
+      "defaults": {
+        "workspace": "~/.openclaw/workspace",
+        "skipBootstrap": true,
+        "heartbeat": {
+          "every": "2h",
+          "target": "last",
+          "prompt": "Read HEARTBEAT.md and Regina memory files. Follow them strictly. If nothing needs attention, reply HEARTBEAT_OK."
+        }
+      }
+    }
+  },
+  "distribution": {
+    "assistantId": "regina-emily-001",
+    "personaBase": "emily",
+    "workspaceRoot": "~/.openclaw/workspace",
+    "memoryRoots": [
+      "MEMORY.md",
+      "memory/emily",
+      "memory/regina/certification",
+      "memory/regina/practice",
+      "memory/regina/creative",
+      "memory/regina/business",
+      "memory/regina/planning"
+    ],
+    "cronTargets": [
+      "Regina Daily Brief",
+      "Regina Weekly Planning",
+      "Regina Growth Transition Review"
+    ],
+    "operatingRules": [
+      "Prioridad diaria: practica, negocio, estudio, vida normal",
+      "No tutor generico ni academia total de Pilates",
+      "Google Workspace y memoria local trabajan juntos",
+      "Reacomodo semanal obligatorio los domingos",
+      "Insistencia adaptativa hasta inicio o cierre de sesion"
+    ]
+  }
+}
