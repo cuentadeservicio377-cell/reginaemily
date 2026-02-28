@@ -17,6 +17,7 @@ Distribución instalable de Regina sobre OpenClaw + Emily, preparada para que el
 - `scripts/prepare-openclaw-source.sh`: clona o actualiza OpenClaw dentro de `state/vendor/openclaw`.
 - `scripts/init-regina.sh`: siembra `state/config` y `state/workspace`.
 - `scripts/install-stack.sh`: ejecuta la preparación automatizable de Regina + OpenClaw.
+- `scripts/update-stack.sh`: re-siembra Regina, reconstruye imagen y reprovisiona después de cambios de base o runtime.
 - `scripts/cron.seed.sh`: activa heartbeat, hooks y cron usando `openclaw-cli`.
 - `docker-compose.yml`: runtime Docker de OpenClaw.
 - `AGENTS.md`: instrucciones de proyecto para agentes operadores.
@@ -53,6 +54,16 @@ scripts/cron.seed.sh
 ```bash
 docker compose up -d openclaw-gateway
 ```
+
+## Reprovisión después de cambios
+
+Si cambias `emily`, Regina o el runtime de `openclaw`, usa:
+
+```bash
+scripts/update-stack.sh
+```
+
+Ese script vuelve a sembrar el workspace, reconstruye la imagen, reaplica cron/hooks y reinicia el gateway.
 
 ## Integración Google
 
@@ -94,3 +105,5 @@ Regina queda corriendo con:
 - heartbeat activo
 - skills específicas de Regina
 - integración Google vía `gog`
+
+Si quieres que Rovo haga esta reprovisión, usa [ROVODEV_UPDATE_PROMPT.md](/Users/pablomeneses/Documents/New%20project/codex-fleet-os/distributions/reginaemily/ROVODEV_UPDATE_PROMPT.md).

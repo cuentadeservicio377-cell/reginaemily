@@ -14,7 +14,7 @@ Antes de tocar nada:
 3. No edites `workspace-seed/` salvo que un paso de instalación falle por una inconsistencia real.
 
 Reglas:
-- No reintroduzcas un wizard genérico.
+- No reintroduzcas onboarding genérico.
 - No cambies identidad, memoria ni comportamiento de Regina.
 - No inventes capacidades de OpenClaw ni de Rovo Dev.
 - No intentes instalar Rovo Dev dentro de Docker ni dentro de este repositorio. Tú ya eres el agente que opera el repo.

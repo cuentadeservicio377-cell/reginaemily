@@ -143,7 +143,7 @@ After a week: "This is what I understand. Correct?"
 
 When you install skills:
 - wacli → WhatsApp
-- google-workspace → Drive, Gmail, Calendar
+- gog → Drive, Docs, Sheets, Calendar, Gmail
 - memory-pill → Enhanced memory
 
 ---

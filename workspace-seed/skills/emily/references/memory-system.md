@@ -42,7 +42,7 @@ Aquí construyo TODO sobre ti. Este archivo crece con cada conversación.
 Qué puedo usar y cómo.
 
 **Contenido:**
-- Skills instaladas (wacli, google-workspace, memory-pill)
+- Skills instaladas (gog, wacli, memory-pill)
 - Integraciones disponibles
 - Qué NO funciona y workarounds
 

@@ -11,7 +11,7 @@ This repository has two operating surfaces:
 
 ## Core Rules
 
-- Do not reintroduce a generic onboarding wizard.
+- Do not reintroduce generic onboarding.
 - Regina operates from transcript, seeded memory, custom skills, and weekly planning.
 - Keep the order of priority: practice -> business beta -> certification -> life load.
 - Google Workspace and local memory must work as one system.
@@ -35,6 +35,8 @@ This repository has two operating surfaces:
   Seeds config and workspace into `state/`.
 - `scripts/install-stack.sh`
   Runs the automatable part of Regina/OpenClaw installation.
+- `scripts/update-stack.sh`
+  Re-seeds Regina, rebuilds Docker image, reapplies cron/hooks, and restarts runtime after base/runtime changes.
 - `scripts/cron.seed.sh`
   Reapplies heartbeat, hooks, and cron jobs.
 - `docker-compose.yml`
@@ -45,5 +47,6 @@ This repository has two operating surfaces:
 - Treat this repository as the project root.
 - Read this file first, then `workspace-seed/AGENTS.md`, `workspace-seed/MEMORY.md`, `workspace-seed/HEARTBEAT.md`, and the relevant `workspace-seed/memory/regina/*` files before proposing changes.
 - If asked to install Regina, operate this repo directly and use the provided scripts.
+- If asked to update Regina after changes in `emily` or `openclaw`, use `scripts/update-stack.sh` and then verify cron/hooks/runtime.
 - If asked to change Regina behavior, edit `workspace-seed/` first unless the issue is clearly runtime-level.
 - Do not assume undocumented OpenClaw capabilities or fabricate Google sync behavior outside `gog`.
