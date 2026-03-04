@@ -1,0 +1,19 @@
+# Regina Emily OpenClaw with gog CLI
+# This extends the base OpenClaw image built from state/vendor/openclaw
+ARG BASE_IMAGE=regina-emily-openclaw:base
+FROM ${BASE_IMAGE}
+
+USER root
+
+# Install gog (Google OAuth CLI by steipete)
+# Download v0.11.0 from GitHub
+RUN curl -fsSL "https://github.com/steipete/gogcli/releases/download/v0.11.0/gogcli_0.11.0_linux_amd64.tar.gz" -o /tmp/gog.tar.gz && \
+    tar -xzf /tmp/gog.tar.gz -C /tmp && \
+    mv /tmp/gog /usr/local/bin/gog && \
+    chmod +x /usr/local/bin/gog && \
+    rm -rf /tmp/gog.tar.gz /tmp/LICENSE /tmp/README.md
+
+USER node
+
+# Verify installation
+RUN gog --version

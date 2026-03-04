@@ -1,5 +1,14 @@
 .env
 state/
+
+# Google OAuth credentials (sensitive)
+client_secret_*.json
+
+# Temporary files
+tmp_*.json
+tmp_*.txt
+tmp_*.sh
+auth_url.txt
 node_modules/
 dist/
 .DS_Store

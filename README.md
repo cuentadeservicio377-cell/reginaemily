@@ -73,15 +73,37 @@ La v1 de Regina usa `gog` como interfaz principal para:
 - Google Sheets
 - Google Calendar
 
-Setup base de `gog`:
+### Autenticación de Google Workspace
 
-```bash
-gog auth credentials /path/to/client_secret.json
-gog auth add you@gmail.com --services gmail,calendar,drive,contacts,docs,sheets
-gog auth list
-```
+**⚠️ IMPORTANTE:** Después de la instalación, debes autenticar `gog` con tu cuenta de Google.
 
-Regla del caso:
+📚 **[Guía Completa de Autenticación](./docs/GOG_AUTHENTICATION_GUIDE.md)** - Paso a paso detallado
+
+⚡ **[Guía Rápida](./docs/QUICK_START.md)** - Para usuarios con experiencia
+
+### Por qué es necesario
+
+Emily necesita acceso a tu Google Workspace para:
+- Crear y gestionar Google Docs, Sheets y carpetas en Drive
+- Programar eventos en Google Calendar
+- Acceder a Gmail para notificaciones
+- Sincronizar memoria entre archivos locales y Google Workspace
+
+### Problemas Comunes
+
+**Problema:** PowerShell corta comandos largos al pegarlos
+**Solución:** Usa el método de script descrito en las guías
+
+**Problema:** "No tokens stored" después de reiniciar
+**Solución:** Verifica que `HOME=/tmp` esté en docker-compose.yml y el volumen montado correctamente
+
+**Problema:** Error 403 en el navegador
+**Solución:** Agrega tu email como usuario de prueba en Google Cloud Console
+
+Ver la [sección de Troubleshooting](./docs/GOG_AUTHENTICATION_GUIDE.md#troubleshooting) para más detalles.
+
+### Regla del caso
+
 - Google es la superficie colaborativa con Regina.
 - La memoria local del asistente sigue siendo la continuidad operativa.
 - Nada importante debe existir solo en uno de los dos lados.
